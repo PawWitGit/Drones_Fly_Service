@@ -8,9 +8,9 @@
 - JS/Bootsrap
 ### Run App:
 - create .env file in the main location
-
+...
 $ touch .env
-
+...
 - fill in .env file:
 - DB_USER = your db_user
 - DB_PASSWORD = your db_password
@@ -19,5 +19,6 @@ $ touch .env
 
 - make migrations with alembic (I'll add instruction for thi point later)
 - run app:
-
+...
 $ uvicorn main:app --reload
+- ...
