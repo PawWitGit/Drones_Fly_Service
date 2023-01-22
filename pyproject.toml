@@ -1,15 +1,26 @@
 [tool.poetry]
-name = "drones-fly-service"
+name = "drones-service"
 version = "0.1.0"
 description = ""
 authors = ["PawWitGit <git.pawelwitala@gmail.com>"]
 readme = "README.md"
-packages = [{include = "drones_fly_service"}]
+packages = [{include = "drones_service"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
 fastapi = "^0.89.1"
 uvicorn = "^0.20.0"
+alembic = "^1.9.2"
+sqlalchemy = "^1.4.46"
+psycopg2 = "^2.9.5"
+psycopg-binary = "^3.1.8"
+databases = "^0.7.0"
+asyncpg = "^0.27.0"
+python-decouple = "^3.7"
+pip = "^22.3.1"
+pyjwt = "^2.6.0"
+passlib = "^1.7.4"
+bcrypt = "^4.0.1"
 
 
 [build-system]
