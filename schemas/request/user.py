@@ -15,5 +15,6 @@ class UserRegisterIn(UserBase):
     last_name: str
     role: str
 
+
 class UserLoginIn(UserBase):
     password: str

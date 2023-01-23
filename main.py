@@ -10,6 +10,7 @@ app.include_router(api_router)
 # async def startup():
 #     await database.connect()
 
+
 @app.on_event("startup")
 async def startup():
     await database.connect()

@@ -9,7 +9,7 @@ from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 
 from starlette.requests import Request
 from db import database
-from models import user
+from models import user, RoleType
 
 
 class AuthManager:
@@ -30,7 +30,7 @@ class CustomHTTPBearer(HTTPBearer):
     async def __call__(
         self, request: Request
     ) -> Optional[HTTPAuthorizationCredentials]:
-        res = super().__call__(request)
+        res = await super().__call__(request)
 
         try:
             payload = jwt.decode(
@@ -46,3 +46,16 @@ class CustomHTTPBearer(HTTPBearer):
             raise HTTPException(401, "Token expired")
         except jwt.InvalidTokenError:
             raise HTTPException(401, "Invalid token")
+
+
+oauth2_scheme = CustomHTTPBearer()
+
+
+def is_drone_user(request: Request):
+    if not request.state.user["role"] == RoleType.user:
+        raise HTTPException(403, "Forbidden")
+
+
+def is_(request: Request):
+    if not request.state.user["role"] == RoleType.verify_person:
+        raise HTTPException(403, "Forbidden")

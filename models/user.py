@@ -15,5 +15,6 @@ user = sqlalchemy.Table(
         "role",
         sqlalchemy.Enum(RoleType),
         nullable=False,
+        server_default=RoleType.user.name,
     ),
 )

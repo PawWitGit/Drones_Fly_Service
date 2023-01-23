@@ -11,7 +11,7 @@ drone = sqlalchemy.Table(
     sqlalchemy.Column("model", sqlalchemy.String(200), nullable=False),
     sqlalchemy.Column("drone_type", sqlalchemy.String(120), nullable=False),
     sqlalchemy.Column(
-        "created-at",
+        "created_at",
         sqlalchemy.DateTime,
         server_default=sqlalchemy.func.now(),
     ),
